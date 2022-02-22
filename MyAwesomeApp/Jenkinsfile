@@ -17,12 +17,6 @@ stages {
       sh 'mvn -f MyAwesomeApp/pom.xml clean install'
     }
   }
-  stage('docker image') {
-     steps {
-       script{
-        dockerImage = docker.build("swthi31/proj:$version","MyAwesomeApp")
-       }
-       }
-}
+  
 }
 }
