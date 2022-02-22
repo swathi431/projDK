@@ -30,6 +30,7 @@ stages {
 					 docker.withRegistry( '', 'dockerhub' ) { 
 						 dockerImage.push() 
 					}
+      }
     }
   }
     
