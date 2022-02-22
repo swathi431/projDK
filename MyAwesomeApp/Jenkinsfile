@@ -33,7 +33,17 @@ stages {
       }
     }
   }
-    
+	stage('run container'){
+		steps{
+			script{
+			dockerImage.run('-it --name "containerProj-$version"')
+			}
+		}
+		
+	}
+	
+	
+	
     
 }
 }
