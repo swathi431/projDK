@@ -1,2 +1,3 @@
 FROM maven:amazoncorretto AS maven 
-RUN mvn -f MyAwesomeApp/pom.xml clean install
+ADD pom.xml /usr/myapp
+RUN mvn -f usr/myapp/pom.xml clean install
