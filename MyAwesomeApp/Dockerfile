@@ -1,6 +1,6 @@
 FROM maven:amazoncorretto AS maven 
 ADD pom.xml usr/myapp/
-RUN mvn clean install
+RUN mvn -f pom.xml clean install
 
 
 
