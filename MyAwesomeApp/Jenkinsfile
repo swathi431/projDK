@@ -20,7 +20,7 @@ stages {
   stage('docker image') {
      steps {
        script{
-        dockerImage = docker.build('swthi31/proj:$version')
+        dockerImage = docker.build("swthi31/proj:$version")
        }
        }
 }
