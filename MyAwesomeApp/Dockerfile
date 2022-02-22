@@ -1,7 +1,7 @@
 
 FROM maven:amazoncorretto AS maven 
-ADD projDK/MyAwesomeApp/src usr/myapp/src
-ADD projDK/MyAwesomeApp/pom.xml usr/myapp/
+ADD /home/ubuntu/jenkins/workspace/projDK/MyAwesomeApp/src usr/myapp/src
+ADD /home/ubuntu/jenkins/workspace/projDK/MyAwesomeApp/pom.xml usr/myapp/
 RUN mvn -f usr/myapp/pom.xml clean install
 
 FROM lolhens/baseimage-openjre
