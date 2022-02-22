@@ -19,7 +19,7 @@ stages {
   }
   stage('docker image') {
      steps {
-        sh 'dockerImage = docker.build("swthi31/proj:$version")' 
+        sh 'dockerImage = docker.build('swthi31/proj:$version')' 
     }
 }
 }
