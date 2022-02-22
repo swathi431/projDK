@@ -37,7 +37,7 @@ stages {
 		steps{
 			
 			withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8sid', namespace: '', serverUrl: '') {
-    					sh 'kubectl apply -f springboot-lb.yaml'
+    					sh 'kubectl apply -f springboot-lb.yaml' 
 				}
 			
 		}
