@@ -23,6 +23,16 @@ stages {
         dockerImage = docker.build("swthi31/proj:$version","MyAwesomeApp")
        }
        }
-}
+  }
+  stage('image push'){
+    steps{
+      script { 
+					 docker.withRegistry( '', 'dockerhub' ) { 
+						 dockerImage.push() 
+					}
+    }
+  }
+    
+    
 }
 }
