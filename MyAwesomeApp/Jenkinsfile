@@ -36,12 +36,11 @@ stages {
 	stage('run container'){
 		steps{
 			script{
-			dockerImage.run('-it --name "containerProj-$version"')
+			dockerImage.run('-it -p 8080:8085 --name "containerProj-$version"') 
 			}
 		}
 		
 	}
-	
 	
 	
     
