@@ -1,4 +1,7 @@
 pipeline{
+  environment {
+  version = "VERSION:$BUILD_NUMBER"
+}
   agent {
   label 'dockerlabel'
 }
@@ -16,7 +19,7 @@ stages {
   }
   stage('docker image') {
      steps {
-        dockerImage = docker.build("swthi31/proj:version1") 
+        sh 'dockerImage = docker.build("swthi31/proj:$version")' 
     }
 }
 }
