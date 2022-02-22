@@ -12,11 +12,7 @@ stages {
     }
   }
 
-  stage('build') {
-    steps {
-      sh 'mvn -f MyAwesomeApp/pom.xml clean install'
-    }
-  }
+  
   stage('docker image') {
      steps {
        script{
@@ -24,27 +20,6 @@ stages {
        }
        }
   }
-  stage('image push'){
-    steps{
-      script { 
-					 docker.withRegistry( '', 'dockerhub' ) { 
-						 dockerImage.push() 
-					}
-      }
-    }
-  }
-	stage('run container'){
-		steps{
-			
-			withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8sid', namespace: '', serverUrl: '') {
-    					sh 'kubectl apply -f MyAwesomeApp/springboot-lb.yaml' 
-				}
-			
-		}
-		
-	}
-	
-	
     
 }
 }
